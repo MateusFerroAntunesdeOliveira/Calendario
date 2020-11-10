@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+
 // CABEÇALHO
 void calendario(int ano);
 char *NomeMes(int mes);
