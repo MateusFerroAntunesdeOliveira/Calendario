@@ -9,7 +9,7 @@ main ()
 
   time_t agora;
   struct tm * tempo;
-  struct tm dia1;
+  struct tm primeiro_dia;
   int ano, mes;
   int i, diasNoMes, d;
   
@@ -19,28 +19,28 @@ main ()
   mes = 1; // para testar, coloca de 0 a 11 para testar outro mes
 
   // tem o dia, mes e ano na variavel agora
-  // criar uma data no mesmo mes e ano, mas dia 1 (por exemplo, variavel dia1)
-  dia1.tm_mday = 1;
+  // criar uma data no mesmo mes e ano, mas dia 1 (por exemplo, variavel primeiro_dia)
+  primeiro_dia.tm_mday = 1;
   // fazer if para bissexto
   // se sim
   // diasPorMes[1] = 29
-  dia1.tm_mon = mes; 
+  primeiro_dia.tm_mon = mes; 
   
-  dia1.tm_year = ano;
-  dia1.tm_hour = 12;
-  dia1.tm_min = 0;
-  dia1.tm_sec = 0;
+  primeiro_dia.tm_year = ano;
+  primeiro_dia.tm_hour = 12;
+  primeiro_dia.tm_min = 0;
+  primeiro_dia.tm_sec = 0;
   // nesta variavel tm, preenche os campos e usa mktime
-  mktime (&dia1);
+  mktime (&primeiro_dia);
   // ver entao o dia da semana que cai dia 1o. usando campo tm_wday
-  //printf ("Dia primeiro cai em (comeca em 0): %d \n", dia1.tm_wday); // domingo eh 0 
+  //printf ("Dia primeiro cai em (comeca em 0): %d \n", primeiro_dia.tm_wday); // domingo eh 0 
   //printf ("\n");
   
   // imprime espacos antes do dia primeiro
   printf ("%s - %d\n", nomeMes[mes], ano+1900);
   printf ("Dom Seg Ter Qua Qui Sex Sab\n");
   // i pula os dias em branco antes do dia primeiro
-  for (i=0; i<dia1.tm_wday; i++){
+  for (i=0; i<primeiro_dia.tm_wday; i++){
     printf ("    ");
   }
   diasNoMes = diasPorMes[mes]; // calcular usando a variavel mes como indice de um vetor de meses
