@@ -23,7 +23,7 @@ int main() {
     time(&t);
     atual = localtime(&t);
 
-    mes = 1;
+    mes = atual->tm_mon;
     ano = atual->tm_year;
 
     // Bissexto
