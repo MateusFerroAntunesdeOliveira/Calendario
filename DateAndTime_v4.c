@@ -16,7 +16,7 @@ main ()
   time (&agora); // pega o tempo corrente, data e hora da execucao
   tempo = localtime (&agora); // preenche a struct tm com os atributos corretos usando o time_t
   ano = tempo->tm_year;
-  mes = tempo->tm_mon; // para testar, coloca de 0 a 11 para testar outro mes
+  mes = 1; // para testar, coloca de 0 a 11 para testar outro mes
 
   // tem o dia, mes e ano na variavel agora
   // criar uma data no mesmo mes e ano, mas dia 1 (por exemplo, variavel dia1)

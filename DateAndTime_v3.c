@@ -23,7 +23,7 @@ int main() {
     time(&t);
     atual = localtime(&t);
 
-    mes = atual->tm_mon;
+    mes = 1;
     ano = atual->tm_year;
 
     // Bissexto
@@ -36,6 +36,9 @@ int main() {
     primeiro_dia.tm_mday = 1;
     primeiro_dia.tm_mon = mes;
     primeiro_dia.tm_year = ano;
+    primeiro_dia.tm_hour = 12;
+    primeiro_dia.tm_min = 0;
+    primeiro_dia.tm_sec = 0;
 
     // Cria uma data pegando campos da struct tm
     mktime(&primeiro_dia);
